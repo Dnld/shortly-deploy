@@ -4,7 +4,7 @@
   "description": "shortly using express",
   "main": "index.js",
   "engines": {
-    "node" "0.12.7"
+    "node": "0.12.7"
   }
   "repository": "",
   "license": "Proprietary",
@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "supertest": "^0.10.0"
-  },
+  }
   "scripts": {
     "postinstall": "grunt build",
     "start": "node index.js"
