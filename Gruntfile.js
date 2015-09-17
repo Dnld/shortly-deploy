@@ -23,7 +23,7 @@ module.exports = function(grunt) {
 
     nodemon: {
       dev: {
-        script: 'server.js'
+        script: 'index.js'
       }
     },
 
@@ -124,9 +124,13 @@ module.exports = function(grunt) {
     'uglify'
   ]);
 
+  grunt.registerTask('prod', [
+    'shell'
+  ]);
+
   grunt.registerTask('upload', function(n) {
     if(grunt.option('prod')) {
-      'shell'
+      grunt.task.run(['shell']);
     } else {
       grunt.task.run(['build', 'server-dev']);
     }
