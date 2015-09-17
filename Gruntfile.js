@@ -84,7 +84,7 @@ module.exports = function(grunt) {
       prodServer: {
         command: 'git push heroku master',
         options: {
-          stdout: true,
+          sdtout: true,
           stderr: true,
           failOnError: true
         }
@@ -137,12 +137,12 @@ module.exports = function(grunt) {
     if(grunt.option('prod')) {
       grunt.task.run(['shell:prodServer']);
     } else {
-      grunt.task.run([ 'server-dev']);
+      grunt.task.run(['build', 'server-dev']);
     }
   });
 
   grunt.registerTask('deploy', [
-    'test', 'upload', 'build'
+    'test', 'upload'
   ]);
 
 
